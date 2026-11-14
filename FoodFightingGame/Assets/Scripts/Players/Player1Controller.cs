@@ -1,92 +1,123 @@
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
-{
-    [Header("Player Settings")]
-    public int health = 5;
-    public int maxHealth = 5;
-    public int filledWeaponSlots = 0;
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private bool attacking = false;
-
+{    
     [Header("References")]
     private Rigidbody2D rb;
     private PlayerInput inputComponent;
+    /*
+    private Transform Attacker;
+    private MeleeAttacks AttackMelee;
+    private RangedAttacks AttackRanged;
+    */
     private Vector2 moveInput = Vector2.zero;
-    private InputAction moveAction;
-    private InputAction attackAction;
+    public LayerMask ground;
 
-    void Start()
+    [Space]
+    [Header("Meta")]
+    public bool canJump;
+    public bool canAttack;
+    [Space]
+    [Header("Player Settings")]
+    public int health;
+    public int maxHealth;
+    public float groundCheckRange;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float speed;
+    [SerializeField] private bool attacking = false;
+
+    [Space]
+    [Header("Rays")]
+    private RaycastHit2D OnGround;
+
+    [Space]
+    [Header("Modifications")]
+    public float speedMult;
+    public float attackSpeedMult;
+    public float jumpHeightMult;
+    
+
+
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         inputComponent = GetComponent<PlayerInput>();
+        //Attacker = transform.GetChild(0);
+
     }
 
-    private void OnEnable()
-    {
-        if (inputComponent != null && inputComponent.actions != null)
-        {
-            moveAction = inputComponent.actions.FindAction("Move");
-            attackAction = inputComponent.actions.FindAction("Attack");
-
-            if (moveAction != null) { moveAction.performed += Move; moveAction.canceled += Move; }
-            //if (attackAction != null) { attackAction.performed += Attack; attackAction.canceled += Attack; }
-        }
-    }
-
-    private void OnDisable()
-    {
-        if (moveAction != null) { moveAction.performed -= Move; moveAction.canceled -= Move; }
-        //if (attackAction != null) { attackAction.performed -= Attack; attackAction.canceled -= Attack; }
-    }
 
     void FixedUpdate()
     {
-        rb.linearVelocity = moveInput * speed;
+        OnGround = Physics2D.Raycast(transform.position, Vector2.down, groundCheckRange, ground);
+        if (OnGround)
+        {
+            canJump = true;
+        }
+        else
+            canJump = false;
     }
-    /*
+    
     void Update()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = transform.position.z;
-        Vector2 lookDir = mousePos - transform.position;
-        rb.MoveRotation(Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f);
-        Transform activeWeapon = transform.GetChild(0);
-        if (activeWeapon.CompareTag("MeleeWeapon"))
-        {
-            currentMeleeWeapon = activeWeapon.GetComponent<MeleeWeapons>();
-        }
-        if (activeWeapon.CompareTag("RangedWeapon"))
-        {
+        //Collect Inputs Then Set Rotation Then Set Movement Then Perform Attacks Then Set CoolDowns
 
-            if (currentRangedWeapon != null && currentRangedWeapon.holdToAttack && attacking)
-            {
-                currentRangedWeapon.Fire();
-            }
-        }
+        //Collect Inputs
+        rb.linearVelocityX = moveInput.x * speed * speedMult;
     }
+    /*
     private void Attack(InputAction.CallbackContext context)
     {
-        if (currentRangedWeapon)
+        if (AttackRanged)
         {
-            if (currentRangedWeapon.holdToAttack)
+            if (AttackRanged.holdToAttack)
                 attacking = context.ReadValueAsButton();
             else if (context.performed)
-                currentRangedWeapon.Fire();
+                AttackRanged.Fire();
         }
-        else if (currentMeleeWeapon && context.performed && currentMeleeWeapon.canAttack)
+        else if (AttackMelee && context.performed && AttackMelee.canAttack)
         {
-            currentMeleeWeapon.StartAttack();
+            AttackMelee.StartAttack();
         }
     }
     */
-    private void Move(InputAction.CallbackContext context)
+
+    public void PressA(InputAction.CallbackContext context)
+    {
+        Debug.Log("Read A Input");
+        if (!attacking)
+        {
+            if (rb.linearVelocity.magnitude < 1)
+            {
+
+            }
+        }
+    }
+    public void PressB(InputAction.CallbackContext context)
+    {
+        Debug.Log("Read B Input");
+        if (!attacking)
+        {
+            if (rb.linearVelocity.magnitude < 1)
+            {
+
+            }
+        }
+    }
+
+    public void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void Jump(InputAction.CallbackContext context)
+    {
+        Debug.Log("Read Jump Input");
+        if (OnGround)
+        rb.AddForceY(jumpForce * jumpHeightMult,ForceMode2D.Impulse);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
