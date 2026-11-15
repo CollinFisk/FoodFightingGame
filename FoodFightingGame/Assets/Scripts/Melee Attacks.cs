@@ -8,8 +8,6 @@ public class MeleeAttacks : MonoBehaviour
     public float AttackSizeY;
     public float HitBoxLingeringDuration;
 
-    public TagField tag;
-
     public void CreateHitox()
     {
         attackHitboxBoxCollider.gameObject.SetActive(true);
