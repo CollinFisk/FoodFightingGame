@@ -464,6 +464,10 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 3019528652545589258
+      type: {class: 'Provider2DCache`1[[UnityEngine.Rendering.Universal.Light2DProvider, Unity.RenderPipelines.Universal.2D.Runtime]]', ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_Cache: []
     - rid: 3890511144324431872
       type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data:
@@ -471,7 +475,7 @@ MonoBehaviour:
         m_SelectedSource:
           rid: -2
         m_Provider2DCache:
-          rid: -2
+          rid: 3019528652545589258
 --- !u!4 &619394802
 Transform:
   m_ObjectHideFlags: 0
@@ -727,6 +731,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1060167682
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.04808
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.46514
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+      propertyPath: m_Name
+      value: Carrot (Only model)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e58572a5c68e063498b139bb625803a5, type: 3}
 --- !u!1 &1227332281
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,6 +971,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54024248dc4c4bb49889dfafa14aa5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeAttacks
+  attackHitboxBoxCollider: {fileID: 0}
+  AttackSizeX: 0
+  AttackSizeY: 0
+  HitBoxLingeringDuration: 0
 --- !u!1 &2124428681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,12 +1092,12 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   groundCheckRange: 0.51
-  jumpForce: 3
+  jumpForce: 6
   speed: 5
   attacking: 0
-  speedMult: 0
-  attackSpeedMult: 0
-  jumpHeightMult: 0
+  speedMult: 1
+  attackSpeedMult: 1
+  jumpHeightMult: 1
 --- !u!114 &2124428685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,7 +1247,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1285,3 +1350,4 @@ SceneRoots:
   - {fileID: 2141058347}
   - {fileID: 2124428683}
   - {fileID: 1227332284}
+  - {fileID: 1060167682}
