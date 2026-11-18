@@ -100,7 +100,9 @@ public class Player1Controller : MonoBehaviour
     {
         //Switcher
         facingRight = !facingRight;
-        transform.Rotate(0, 180, 0);
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
     #region Attacks
     /*
