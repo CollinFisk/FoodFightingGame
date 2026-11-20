@@ -20,20 +20,19 @@ public class Player1Controller : MonoBehaviour
     [Header("Meta")]
     [SerializeField] private bool canJump;
     [SerializeField] private bool canAttack;
-    [SerializeField] private float canAttackCooldowwn;
+    [SerializeField] private float canAttackCooldown;
     private bool facingRight;
-
+    private RaycastHit2D OnGround;
+    public bool onGround;
     [Space]
     [Header("Character Settings")]
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
     [SerializeField] private float groundCheckRange;
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpVelocity;
     [SerializeField] private float speed;
 
-    [Space]
-    [Header("Rays")]
-    private RaycastHit2D OnGround;
+
 
     [Space]
     [Header("Modifications")]
@@ -43,12 +42,12 @@ public class Player1Controller : MonoBehaviour
 
     [Space]
     [Header("Attacks")]
-    private float Attack1cooldown;
-    private  float Attack2cooldown;
-    private  float Attack3cooldown;
-    private  float Attack4cooldown;
-    private  float Attack5cooldown;
-    private  float Attack6cooldown;
+    [SerializeField] private float Attack1cooldown;
+    [SerializeField] private float Attack2cooldown;
+    [SerializeField] private float Attack3cooldown;
+    [SerializeField] private float Attack4cooldown;
+    [SerializeField] private float Attack5cooldown;
+    [SerializeField] private float Attack6cooldown;
 
 
     void Awake()
@@ -58,6 +57,12 @@ public class Player1Controller : MonoBehaviour
         Attacker = transform.GetChild(0);
         AttackMelee = Attacker.GetComponent<MeleeAttacks>();
     }
+    void Start()
+    {
+        //transform.position = startposition;
+        canAttackCooldown = 1;
+        StartAttackCooldown();
+    }
 
 
     void FixedUpdate()
@@ -65,10 +70,14 @@ public class Player1Controller : MonoBehaviour
         OnGround = Physics2D.Raycast(transform.position, Vector2.down, groundCheckRange, ground);
         if (OnGround)
         {
+            onGround = true;
             canJump = true;
         }
         else
+        {
+            onGround = false;
             canJump = false;
+        }
     }
     
     void Update()
@@ -129,9 +138,9 @@ In Air Moving Horizontal + Falling(A): (Falling kick) attacks diagonally downwar
 
 In Air Moving Horizontal + Rising(A): (Forward Air Kick) Attacks forward with more range costing more frames than non directional.
 
-In Air Moving Horizontal Aim Up (A): (Upward Air attack) Kicks Upward
+In Air Aim Up (A): (Upward Air attack) Kicks Upward
  
-In Air Moving Horizontal Aim Down (A) (Downward Air Attack) Kicks Down quickly
+In Air Aim Down (A) (Downward Air Attack) Kicks Down quickly
 
      */
     public void PressLb(InputAction.CallbackContext context)
@@ -140,33 +149,37 @@ In Air Moving Horizontal Aim Down (A) (Downward Air Attack) Kicks Down quickly
     }    
     public void PressRb(InputAction.CallbackContext context)
     {
-
+        Debug.Log("Read Rb Input");
     }
     public void PressA(InputAction.CallbackContext context)
     {
         if (canAttack)
         {
-            Debug.Log("Read A Input");
-
             canAttack = false;
             if (OnGround)
             {
-                if (rb.linearVelocityX < 1)
+                if (rb.linearVelocityX < 1 && rb.linearVelocityX > -1)
                 {
                     Debug.Log("OnGroundNotMovingAttackRead");
                     OnGroundNoMovementA();
                 }
-                if (rb.linearVelocityX >= 1)
+                if (rb.linearVelocityX >= 1 || rb.linearVelocityX <= -1)
                 {
                     Debug.Log("OnGroundMovingAttackRead");
-                    OnGroundNoMovementA();
+                    OnGroundMovingA();
                 }
             }
             else if(!OnGround)
             {
-                if (rb.linearVelocityX < 1)
+                if (rb.linearVelocityX < 1 && rb.linearVelocityX > -1)
                 {
-
+                    Debug.Log("InAirNotMovingAttackRead");
+                    InAirNoMovementA();
+                }
+                if (rb.linearVelocityX >= 1 || rb.linearVelocityX <= -1)
+                {
+                    Debug.Log("InAirMovingAttackRead");
+                    InAirMovingA();
                 }
             }
         }
@@ -175,11 +188,11 @@ In Air Moving Horizontal Aim Down (A) (Downward Air Attack) Kicks Down quickly
     {
         if (canAttack)
         {
-            if (rb.linearVelocityX < 1)
+            if (rb.linearVelocityX < 1 && rb.linearVelocityX > -1)
             {
 
             }
-            if(rb.linearVelocityX >= 1)
+            if (rb.linearVelocityX >= 1 && rb.linearVelocityX <= -1)
             {
                 
             }
@@ -190,14 +203,35 @@ In Air Moving Horizontal Aim Down (A) (Downward Air Attack) Kicks Down quickly
     private void OnGroundNoMovementA()
     {
         Debug.Log("Attack OnGroundNoMovementA Performed");
-        canAttackCooldowwn = Attack1cooldown;
+        canAttackCooldown = Attack1cooldown;
         StartAttackCooldown();
     }
-    private void OnGroundMoveingA()
+    private void OnGroundMovingA()
     {
         Debug.Log("Attack OnGroundMovingA Performed");
-        canAttackCooldowwn = Attack2cooldown;
+        canAttackCooldown = Attack2cooldown;
         StartAttackCooldown();
+    }
+    private void InAirNoMovementA()
+    {
+        Debug.Log("Attack InAirNoMovementA Performed");
+        canAttackCooldown = Attack3cooldown;
+        StartAttackCooldown();
+    }
+    private void InAirMovingA()
+    {
+        if (rb.linearVelocityY < 0)
+        {
+            Debug.Log("Attack InAirMovingDownA Performed");
+            canAttackCooldown = Attack4cooldown;
+            StartAttackCooldown();
+        }
+        if (rb.linearVelocityY > 0)
+        {
+            Debug.Log("Attack InAirMovingUpA Performed");
+            canAttackCooldown = Attack4cooldown;
+            StartAttackCooldown();
+        }
     }
 
     #endregion Attacks
@@ -208,26 +242,24 @@ In Air Moving Horizontal Aim Down (A) (Downward Air Attack) Kicks Down quickly
 
     public void Jump(InputAction.CallbackContext context)
     {
-        Debug.Log("Read Jump Input");
-
-        if (OnGround)
+        if (context.performed && OnGround)
         {
-            Debug.Log("Performed Jump");
-            rb.AddForceY(jumpForce * jumpHeightMult, ForceMode2D.Impulse);
+            rb.linearVelocityY = jumpVelocity;
         }
     }
 
-
-
-
     private void StartAttackCooldown()
     {
-        if (canAttackCooldowwn > 0)
-            Invoke(nameof(EndAttackCooldown), canAttackCooldowwn);
+        if (canAttackCooldown <= 0)
+        {
+            EndAttackCooldown();
+        }
+        else if (canAttackCooldown > 0)
+            Invoke(nameof(EndAttackCooldown), canAttackCooldown);
     }
     private void EndAttackCooldown()
     {
-        canAttackCooldowwn = 0;
+        canAttackCooldown = 0;
         canAttack = true;
     }
 

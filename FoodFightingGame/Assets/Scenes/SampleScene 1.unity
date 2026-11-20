@@ -1028,16 +1028,22 @@ MonoBehaviour:
     m_Bits: 64
   canJump: 0
   canAttack: 0
-  canAttackCooldowwn: 0
+  canAttackCooldown: 0
+  onGround: 0
   health: 5
   maxHealth: 5
   groundCheckRange: 0.51
-  jumpForce: 6
+  jumpVelocity: 12
   speed: 5
-  attacking: 0
   speedMult: 1
   attackSpeedMult: 1
   jumpHeightMult: 1
+  Attack1cooldown: 1
+  Attack2cooldown: 1
+  Attack3cooldown: 1
+  Attack4cooldown: 1
+  Attack5cooldown: 1
+  Attack6cooldown: 1
 --- !u!114 &2124428685
 MonoBehaviour:
   m_ObjectHideFlags: 0
