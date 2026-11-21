@@ -3,7 +3,42 @@ guid: e58572a5c68e063498b139bb625803a5
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BLACK
+    second: {fileID: 2100000, guid: f0edb2fb7158a5d498d01236cf3e5cd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carrot
+    second: {fileID: 2100000, guid: 5f38447fb1f27094c99aff199ea59e88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fkork
+    second: {fileID: 2100000, guid: a0aeb77391180ae4897b343bb284463a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GLOVES
+    second: {fileID: 2100000, guid: a733f47482003ab4389db0564a100c1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: b70072573aa41d64d88623af50f1b9ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoe
+    second: {fileID: 2100000, guid: 8350e8cf0b59f5545b4a4a4a10003005, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sole
+    second: {fileID: 2100000, guid: fb848a7cfb25f444a9124933caaa5525, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

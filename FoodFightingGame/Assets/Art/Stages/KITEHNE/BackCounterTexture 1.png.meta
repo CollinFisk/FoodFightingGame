@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: edd0ca4138378174d891c435c5c2bb29
+guid: 670e0f5fc8c0f14419ece0e0ccc312a5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3698903628304029569
-    second: Dirty plate top_0
+      213: 5366487818448914223
+    second: BackCounterTexture_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dirty plate top_0
+      name: BackCounterTexture_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1024
-        height: 1024
+        height: 1004
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +117,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f78e8886fbadaacc0800000000000000
-      internalID: -3698903628304029569
+      spriteID: f27cb1eec38997a40800000000000000
+      internalID: 5366487818448914223
       vertices: []
       indices: 
       edges: []
@@ -137,7 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dirty plate top_0: -3698903628304029569
+      BackCounterTexture_0: 5366487818448914223
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

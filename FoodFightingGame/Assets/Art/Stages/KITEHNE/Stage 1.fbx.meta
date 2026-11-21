@@ -3,7 +3,162 @@ guid: 53284b13a4653b847947cf2b51873a72
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 2nd Wood
+    second: {fileID: 2100000, guid: 70c7cfe7cd5b80745be388d94ea5ad85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Background
+    second: {fileID: 2100000, guid: a31698e11cd2def489a58d6d735755b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Banene
+    second: {fileID: 2100000, guid: 1af78c5e27b4fa04783a931cbca8ef78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabinents
+    second: {fileID: 2100000, guid: e679f34c986e1b741a30db400e5d4a71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabinents.001
+    second: {fileID: 2100000, guid: 83af100a655559843b5f574d9bf1e725, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chez
+    second: {fileID: 2100000, guid: 0e0db01bf164dcd469a3a454f3bc9fea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Counter
+    second: {fileID: 2100000, guid: d8346e23ccf54a54890b3e93915c7e58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Countertop
+    second: {fileID: 2100000, guid: dc8e85b9cab871a47945b7c3258c3958, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Countertopback
+    second: {fileID: 2100000, guid: 7fed30035353fb746923feeb63a673a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dirty plate
+    second: {fileID: 2100000, guid: 4330afaec45026f40a72f80ce8f6d3dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dirty plate.001
+    second: {fileID: 2100000, guid: 346e2602e33d2d94aba306138d759746, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dirty plate.004
+    second: {fileID: 2100000, guid: 083b371a8b9435b46bf1a00f0f33145c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Inside MACROWAVE
+    second: {fileID: 2100000, guid: a4b205d95e652c3429abcada8712bb7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Inside oven
+    second: {fileID: 2100000, guid: 3e2ec731c8caec240816c2025cb36673, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Knife
+    second: {fileID: 2100000, guid: 7b75522b4653dfc46bbaffde346e653e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 1fcba3348aecfc7449037e4ef008b587, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Outline
+    second: {fileID: 2100000, guid: 04e06712940f3734b9cbff021e76b61a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oven
+    second: {fileID: 2100000, guid: a4df0012f971c0c44baf4ec62eefe816, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oven top
+    second: {fileID: 2100000, guid: 1c6156cff36220642bf133490ea85d26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pot holder
+    second: {fileID: 2100000, guid: 36c0b659d5adc814596519bf7c67a69f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Soap
+    second: {fileID: 2100000, guid: 55a60e22f57472540ac98c629add0617, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 01eebc8d78d9d984fb056c16669ddb1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: dea3c9732e2338e47b96b96edfcd0dee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water
+    second: {fileID: 2100000, guid: 04802b3af079d144389beb6b2c3460ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water2
+    second: {fileID: 2100000, guid: 76d0b4d8320c5e845bf7a3eafea0e550, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BackCounterTexture
+    second: {fileID: 2800000, guid: 670e0f5fc8c0f14419ece0e0ccc312a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Burnt banana
+    second: {fileID: 2800000, guid: 196b5559e5522ef4298f59c97569cde0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Countertop front
+    second: {fileID: 2800000, guid: b44b1ae6885607545a82673d1f7c6dd3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Dirty plate
+    second: {fileID: 2800000, guid: b3aae08d9622e024580a81b9d7bb6bd5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Dirty plate top
+    second: {fileID: 2800000, guid: 2ca972c5b0000694ba084ba0e7373b56, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: oven top
+    second: {fileID: 2800000, guid: 495f83a7a046cf04d8340cd9d8dfd5a7, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

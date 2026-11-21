@@ -588,6 +588,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8695720818539682348, guid: 53284b13a4653b847947cf2b51873a72, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a4b205d95e652c3429abcada8712bb7e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3705,8 +3709,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2637791924567645796, guid: e58572a5c68e063498b139bb625803a5, type: 3}
-  - {fileID: 1585245502356829148, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+  - {fileID: 2100000, guid: a733f47482003ab4389db0564a100c1c, type: 2}
+  - {fileID: 2100000, guid: f0edb2fb7158a5d498d01236cf3e5cd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3811,9 +3815,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4156711385485655482, guid: e58572a5c68e063498b139bb625803a5, type: 3}
-  - {fileID: -8722418790001855593, guid: e58572a5c68e063498b139bb625803a5, type: 3}
-  - {fileID: 1585245502356829148, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+  - {fileID: 2100000, guid: 8350e8cf0b59f5545b4a4a4a10003005, type: 2}
+  - {fileID: 2100000, guid: fb848a7cfb25f444a9124933caaa5525, type: 2}
+  - {fileID: 2100000, guid: f0edb2fb7158a5d498d01236cf3e5cd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3975,8 +3979,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2402170123841771534, guid: e58572a5c68e063498b139bb625803a5, type: 3}
-  - {fileID: 1585245502356829148, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+  - {fileID: 2100000, guid: a0aeb77391180ae4897b343bb284463a, type: 2}
+  - {fileID: 2100000, guid: f0edb2fb7158a5d498d01236cf3e5cd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4025,8 +4029,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7731335867214853813, guid: e58572a5c68e063498b139bb625803a5, type: 3}
-  - {fileID: 1585245502356829148, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+  - {fileID: 2100000, guid: 5f38447fb1f27094c99aff199ea59e88, type: 2}
+  - {fileID: 2100000, guid: f0edb2fb7158a5d498d01236cf3e5cd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4075,7 +4079,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1585245502356829148, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+  - {fileID: 2100000, guid: f0edb2fb7158a5d498d01236cf3e5cd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4142,7 +4146,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1585245502356829148, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+  - {fileID: 2100000, guid: f0edb2fb7158a5d498d01236cf3e5cd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4224,7 +4228,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+  - {fileID: 2100000, guid: b70072573aa41d64d88623af50f1b9ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4273,7 +4277,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1585245502356829148, guid: e58572a5c68e063498b139bb625803a5, type: 3}
+  - {fileID: 2100000, guid: f0edb2fb7158a5d498d01236cf3e5cd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4417,15 +4421,22 @@ MonoBehaviour:
     m_Bits: 64
   canJump: 0
   canAttack: 0
-  canAttackCooldowwn: 0
+  canAttackCooldown: 0
+  onGround: 0
   health: 5
   maxHealth: 5
   groundCheckRange: 0.05
-  jumpForce: 6
+  jumpVelocity: 0
   speed: 5
   speedMult: 1
   attackSpeedMult: 1
   jumpHeightMult: 1
+  Attack1cooldown: 0
+  Attack2cooldown: 0
+  Attack3cooldown: 0
+  Attack4cooldown: 0
+  Attack5cooldown: 0
+  Attack6cooldown: 0
 --- !u!114 &9111662115262667452
 MonoBehaviour:
   m_ObjectHideFlags: 0
